@@ -1,0 +1,26 @@
+<div class="instructions">
+    <h1>Hangman Game</h1>
+    <img
+        src="assets/imgs/hangman.png"
+        class="hangman-thumbnail"
+        alt="hangman icon"
+    />
+    <div class="instructions-texts">
+        <h2>Instructions</h2>
+        <p>
+            To play, aim to decipher the concealed word before the hangman's
+            figure is fully drawn. Begin by picking a category or difficulty
+            level. A random word will be selected, depicted by dashes. Deduce
+            letters one by one to uncover the mystery word.
+        </p>
+        <p>
+            Correct guesses will fill in the blanks, while incorrect ones will
+            contribute to completing the hangman's illustration. Be mindful not
+            to make too many incorrect guesses, as it will lead to the hangman's
+            demise, concluding the game.
+        </p>
+    </div>
+    <button [routerLink]="routes.GameSettings" class="game-btn button-primary">
+        Got it
+    </button>
+</div>

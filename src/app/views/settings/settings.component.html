@@ -1,0 +1,42 @@
+<div class="settings">
+    <div class="back" [routerLink]="'/' + routes.Instructions">
+        <p>Instructions</p>
+        <img src="assets/imgs/back-arrow.png" alt="back arrow" />
+    </div>
+    <h1>Choose Difficulty</h1>
+    <div class="instructions-texts">
+        <p>Let's play <span class="highlighted">Hangman!</span></p>
+        <p>
+            Select the desired <span class="highlighted">word length</span> or
+            opt for a random selection.
+        </p>
+    </div>
+    <div class="word-length">
+        <div class="word-length-items">
+            <button
+                *ngFor="let item of availableWordLengths"
+                (click)="selectWordLength(item)"
+                class="word-length-item"
+                [class.active]="!isRandom && item === selectedLength"
+                [disabled]=""
+            >
+                {{ item }}
+            </button>
+        </div>
+        <button
+            (click)="selectRandomWordLength()"
+            [class.active]="isRandom"
+            class="game-btn word-length-random"
+        >
+            Random
+        </button>
+
+        <button
+            *ngIf="wordIsSelected"
+            [routerLink]="'/' + routes.PlayGame"
+            class="game-btn button-primary play-btn"
+        >
+            Let's play
+        </button>
+    </div>
+</div>

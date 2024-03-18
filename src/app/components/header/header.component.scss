@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    width: 100%;
+    height: 60px;
+    padding: 0 50px;
+
+    background: var(--deepDark);
+
+    a {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}

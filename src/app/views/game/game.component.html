@@ -1,0 +1,61 @@
+<div class="game">
+    <div class="back" (click)="newGame()">
+        <p>Game settings</p>
+        <img src="assets/imgs/back-arrow.png" alt="back arrow" />
+    </div>
+
+    <div class="hangman-wrapper">
+        <svg viewBox="0 0 10 12" class="stickman">
+            <path *ngIf="tries >= 1" d="M1,11 h8" />
+            <path *ngIf="tries >= 2" d="M9,11 v-10" />
+            <path *ngIf="tries >= 3" d="M9,1 h-4" />
+            <path *ngIf="tries >= 4" d="M5,1 v2" />
+            <circle *ngIf="tries >= 5" cx="5" cy="4" r="1" />
+            <path *ngIf="tries >= 6" d="M5,5 v3" />
+            <path *ngIf="tries >= 7" d="M5,5 l-2,2" />
+            <path *ngIf="tries >= 8" d="M5,5 l2,2" />
+            <path *ngIf="tries >= 9" d="M5,8 l-2,2" />
+            <path *ngIf="tries >= 10" d="M5,8 l2,2" />
+        </svg>
+    </div>
+
+    <div class="gameplay">
+        <h1>Magic Word</h1>
+
+        <div class="game-status">
+            <div *ngIf="gameWon" class="won">
+                <img src="assets/imgs/won-icon.png" alt="game status" />
+                <span>You've won</span>
+            </div>
+            <div *ngIf="gameLost" class="lost">
+                <img src="assets/imgs/lost-icon.png" alt="game status" />
+                <span>You've lost</span>
+            </div>
+        </div>
+
+        <div class="word-box">
+            <h2>{{ wordBox }}</h2>
+            <p *ngIf="gameLost">Answer: {{ selectedWord }}</p>
+        </div>
+        <div class="keypad">
+            <button
+                *ngFor="let letter of letters"
+                class="keypad-button"
+                id="btn-{{ letter }}"
+                [disabled]="usedLetters.includes(letter) || gameLost || gameWon"
+                (click)="selectLetter(letter)"
+            >
+                {{ letter }}
+            </button>
+        </div>
+
+        <div class="action-buttons">
+            <button (click)="endGame()" class="game-btn button-light">
+                End game
+            </button>
+            <button (click)="newGame()" class="game-btn button-primary">
+                Start new game
+            </button>
+        </div>
+    </div>
+</div>

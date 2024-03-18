@@ -1,0 +1,63 @@
+:host {
+    width: 100%;
+}
+
+.instructions {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    height: 100%;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        color: var(--primary);
+    }
+
+    .hangman-thumbnail {
+        width: 80px;
+    }
+
+    .instructions-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        width: 100%;
+        text-align: justify;
+
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 30px;
+        }
+
+        .hangman-thumbnail {
+            width: 50px;
+        }
+
+        .instructions-texts {
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

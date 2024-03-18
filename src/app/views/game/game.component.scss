@@ -1,0 +1,191 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+svg path,
+svg circle {
+    stroke: var(--primary);
+    stroke-width: 0.25;
+    stroke-linecap: round;
+    fill: none;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+
+    .gameplay {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .game-status {
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+
+            .won {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-left: 10px;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                    object-fit: contain;
+                }
+
+                span {
+                    color: var(--success);
+                    font-weight: 700;
+                }
+            }
+
+            .lost {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding-left: 10px;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                    object-fit: contain;
+                }
+
+                span {
+                    color: var(--gameOver);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .word-box {
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            p {
+                margin-top: 5px;
+                font-size: 15px;
+                font-weight: 600;
+                color: var(--primary);
+            }
+        }
+
+        .keypad {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 40px;
+                height: 40px;
+
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+                font-size: 20px;
+                font-weight: 700;
+
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            width: 100%;
+
+            button {
+                flex: 1;
+                margin: 0;
+            }
+        }
+    }
+
+    .back {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+
+        p {
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        display: none;
+    }
+
+    .game-status {
+        min-height: 0 !important;
+    }
+
+    .hangman-wrapper {
+        margin-top: 30px;
+    }
+
+    .game {
+        grid-template-columns: 1fr;
+    }
+
+    .keypad {
+        justify-content: center;
+    }
+
+    .gameplay,
+    .hangman-wrapper {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hangman-wrapper {
+        svg {
+            height: 150px;
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+
+        button {
+            width: 100%;
+        }
+    }
+}

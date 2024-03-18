@@ -1,0 +1,37 @@
+:host {
+    display: block;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 60px);
+    background: var(--dark);
+
+    .game-container {
+        position: relative;
+        display: flex;
+
+        justify-items: center;
+
+        width: 550px;
+        min-height: 550px;
+
+        padding: 50px 30px;
+        margin: 20px;
+
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 768px) {
+        .game-container {
+            width: 90%;
+            min-height: auto;
+            padding: 30px 20px;
+        }
+    }
+}
